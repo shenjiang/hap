@@ -1,0 +1,11 @@
+version: "2"
+
+services:
+  haproxy:
+    image: haproxy:1.6.5
+    container_name: haproxy
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    ports:
+      - "80:80"
+    network_mode: "bridge"
